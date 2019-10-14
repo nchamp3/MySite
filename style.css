@@ -913,19 +913,19 @@ input:required {
     -webkit-transition-duration: 800ms;
     -o-transition-duration: 800ms;
     transition-duration: 800ms;
-    height: 76px;
-    width: 76px;
+    height: 55px;
+    width: 320px;
     background-color: #fc6060;
     display: inline-block;
     text-align: center;
-    line-height: 76px;
-    border-radius: 50%;
+    line-height: 52px;
+    border-radius: 25px;
     color: #ffffff;
-    font-size: 30px;
+    font-size: 25px;
     position: absolute;
     top: -38px;
     left: 50%;
-    margin-left: -38px; }
+    margin-left: -160px; }
   .why-choose-us-content h4 {
     font-size: 20px;
     font-weight: 500;
