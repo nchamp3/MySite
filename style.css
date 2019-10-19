@@ -1549,6 +1549,7 @@ input:required {
 .single-portfolio-content {
   position: relative;
   z-index: 1;
+  cursor: pointer;
   -webkit-transition-duration: 500ms;
   -o-transition-duration: 500ms;
   transition-duration: 500ms;
@@ -1646,8 +1647,8 @@ input:required {
     border-radius: 10px; }
 
     .single-instagram-item{
-      height: 30%;
-      width: 30%;
+      height: 25%;
+      width: 25%;
     }
 
 /*# sourceMappingURL=style.css.map */
