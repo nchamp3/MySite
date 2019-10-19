@@ -15,6 +15,7 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="project_modals.css">
 </head>
 
 <body>
@@ -130,6 +131,8 @@
   </div>
   <!-- About Us Area End -->
 
+
+
   <!-- Gallery Area Start -->
   <div class="alime-portfolio-area section-padding-80 clearfix" id = "projects">
     <div class="container-fluid">
@@ -140,41 +143,60 @@
           <div class="alime-projects-menu">
             <div class="section-heading text-center">
               <h2>Projects</h2>
+              <h6 style="font-size: 13px;"><i>Check out my Github for more!</i></h6>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Modal for projects -->
+      <div id="myModal" class="modal">
+
+        <!-- Modal Content (The Image) -->
+        <img class="modal-content" id="modal_img">
+
+        <!-- Modal Caption (Image Text) -->
+        <div id="caption"></div>
+      </div>
+      <!-- Modal for projects end-->
+
       <div class="row alime-portfolio">
+
         <!-- Single Gallery Item -->
         <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 wow fadeInUp" data-wow-delay="100ms">
           <div class="single-portfolio-content">
-            <img src="img/bg-img/android.jpg" alt="Project 1">
-            <div class="hover-content">
-              <a href="img/bg-img/android.jpg" class="portfolio-img">What's this?</a>
-            </div>
+            <img src="img/bg-img/fad.jpg" id ="p1" onclick = "openModal(p1)" alt="This Android app aims at helping users avoid eating foods they’re allergic to, by scanning the barcode of food items and informing the user if the item is safe to eat or not.">
           </div>
         </div>
 
         <!-- Single Gallery Item -->
         <div class="col-12 col-sm-6 col-lg-3 single_gallery_item video mb-30 wow fadeInUp" data-wow-delay="300ms">
           <div class="single-portfolio-content">
-            <img src="img/bg-img/mula.png" alt="Project 2">
-            <div class="hover-content">
-              <a href="img/bg-img/mula.png" class="portfolio-img">Huh?</a>
-            </div>
+            <img src="img/bg-img/mula.png" id ="p2" onclick = "openModal(p2)" alt="This web app utilizes the PayPal API to allow for micro saving. The user can utilize the saved funds once a certain amount is reached. I worked on the backend using Python (Flask) and MongoDB.">
           </div>
         </div>
 
         <!-- Single Gallery Item -->
         <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 wow fadeInUp" data-wow-delay="500ms">
           <div class="single-portfolio-content">
-            <img src="img/bg-img/6nimmnt.png" alt="Project 3">
-            <div class="hover-content">
-              <a href="img/bg-img/6nimmnt.png" class="portfolio-img">Click me!</a>
-            </div>
+            <img src="img/bg-img/6nimmnt.jpg" id ="p3" onclick = "openModal(p3)" alt="This project is an attempt to create a general reinforcement learning algorithm that masters 6nimmt! through self-play." style="width:90%; height:90%;">
           </div>
         </div>
+
+        <!-- Single Gallery Item -->
+        <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 wow fadeInUp" data-wow-delay="500ms">
+          <div class="single-portfolio-content">
+            <img src="img/bg-img/sfd.png" id ="p4" onclick = "openModal(p4)" alt="Multi-page directory which displays general information (name, phone number, office, email, etc.) of faculty and staff." style="width:90%; height:90%;">
+          </div>
+        </div>
+
+        <!-- Single Gallery Item -->
+        <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 wow fadeInUp" data-wow-delay="500ms">
+          <div class="single-portfolio-content">
+            <img src="img/bg-img/ppm.PNG" id ="p5" onclick = "openModal(p5)" alt="PPM image manipulation software developed in C# and F#. Manipulations include RGB-Grayscale, Rotate, Zoom, Shrink, and Flip.">
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -352,6 +374,7 @@
   <script src="js/default-assets/active.js"></script>
   <!-- Typed -->
   <script src="js/typed.js"></script>
+
   <script type="text/javascript">
     var typed = $(".typed");
 
@@ -363,18 +386,67 @@
       });
     });
 
-    $('.logo-carousel').flexslider({
-      minItems: 1,
-      maxItems: 4,
-      move: 1,
-      itemWidth: 200,
-      itemMargin: 0,
-      animation: "slide",
-      slideshow: true,
-      slideshowSpeed: 3000,
-      directionNav: false,
-      controlNav: false
-    });
+    // $('.logo-carousel').flexslider({
+    //   minItems: 1,
+    //   maxItems: 4,
+    //   move: 1,
+    //   itemWidth: 200,
+    //   itemMargin: 0,
+    //   animation: "slide",
+    //   slideshow: true,
+    //   slideshowSpeed: 3000,
+    //   directionNav: false,
+    //   controlNav: false
+    // });
+
+    function openModal(clicked_img){
+      var modal = document.getElementById("myModal");
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = clicked_img;
+      var modalImg = document.getElementById("modal_img");
+      var captionText = document.getElementById("caption");
+      var url;
+      var title;
+      if(clicked_img.id == 'p1')
+      {
+        url = "https://github.com/nchamp3/FoodAllergen-Android";
+        title = "Food Allergen Detector";
+      }
+      else if(clicked_img.id == 'p2')
+      {
+        url = "https://github.com/nchamp3/Mula";
+        title = "Mula";
+      }
+      else if(clicked_img.id == 'p3')
+      {
+        url = "#";
+        title = "Smart 6nimmt! Player";
+      }
+      else if(clicked_img.id == 'p4')
+      {
+        url = "https://github.com/nchamp3/Staff-Faculty-Directory";
+        title = "Staff/Faculty Directory";
+      }
+      else if(clicked_img.id == 'p5')
+      {
+        url = "https://github.com/nchamp3/Image-Processor";
+        title = "PPM Image Processor";
+      }
+      // img.onclick = function(){
+        window.location = '#aboutme';
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        captionText.innerHTML = '<h3 style="color:white;"> ' + title + '</h3>' + img.alt + " " +
+        '<br> <a href="' + url + '" style="color:#7FFFD4;" target = "_blank">' + "View on Github!" + '</a>';
+      // }
+
+      // When the user clicks on modal, close the modal
+        modal.onclick = function() {
+        window.location = '#projects';
+        modal.style.display = "none";
+      }
+    }
+
   </script>
 
 </body>

@@ -123,7 +123,7 @@
     // ***********************************
     // :: 6.0 Portfolio Button Active Code
     // ***********************************
-    
+
     $('.portfolio-menu button.btn').on('click', function () {
         $('.portfolio-menu button.btn').removeClass('active');
         $(this).addClass('active');
@@ -155,16 +155,31 @@
         $('.video-play-btn').magnificPopup({
             type: 'iframe'
         });
+        // $('.portfolio-img').magnificPopup({
+        //     type: 'image',
+        //     gallery: {
+        //         enabled: true,
+        //         preload: [0, 2],
+        //         navigateByImgClick: true,
+        //         tPrev: 'Previous',
+        //         tNext: 'Next'
+        //     }
+        // });
         $('.portfolio-img').magnificPopup({
-            type: 'image',
-            gallery: {
-                enabled: true,
-                preload: [0, 2],
-                navigateByImgClick: true,
-                tPrev: 'Previous',
-                tNext: 'Next'
-            }
-        });
+      		type: 'image',
+      		closeOnContentClick: true,
+      		closeBtnInside: true,
+      		// fixedContentPos: true,
+      		mainClass: 'mfp-with-zoom mfp-img-mobile', // class to remove default margin from left and right side
+      		image: {
+      			verticalFit: true,
+            titleSrc: 'title'
+      		},
+      		zoom: {
+      			enabled: true,
+      			duration: 300 // don't foget to change the duration also in CSS
+      		}
+      	});
     }
 
     // **************************
